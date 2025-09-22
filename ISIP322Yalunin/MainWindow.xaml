@@ -7,10 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid>
-            <TextBlock Width="200" Height="200">
-                
-            </TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="0,0,10,0"/>
+            <Button Content="Поиск" Click="SearchButton_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ProductsDataGrid" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Binding="{Binding Code}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Категория" Binding="{Binding Category}"/>
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
+
 </Window>
