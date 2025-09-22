@@ -12,7 +12,6 @@
     <Folder Include="Новая папка1\" />
     <Folder Include="Новая папка2\" />
     <Folder Include="Новая папка3\" />
-    <Folder Include="Новая папка\" />
   </ItemGroup>
 
 </Project>
