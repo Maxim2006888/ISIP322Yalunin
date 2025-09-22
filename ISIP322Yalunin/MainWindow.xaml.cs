@@ -19,9 +19,10 @@ namespace ISIP322Yalunin
             InitializeComponent();
         }
 
+
         public class Product
         {
-            
+
         }
     }
 }
