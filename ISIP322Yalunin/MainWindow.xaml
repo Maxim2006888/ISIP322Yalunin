@@ -10,39 +10,36 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <TextBlock>
-               Код: 
-            </TextBlock>
-            <TextBox x:Name="CodeTextBox" Width="80" Margin="0,0,5,0"/>
-            <TextBlock>
-                Название: 
-            </TextBlock>
-            <TextBox x:Name="NameTextBox" Width="120" Margin="0,0,25,0"/>
-            <TextBlock>
-                Цена: 
-            </TextBlock>
-            <TextBox x:Name="PriceTextBox" Width="80" Margin="0,0,25,0"/>
-            <TextBlock>
-                Количество: 
-            </TextBlock>
-            <TextBox x:Name="QuantityTextBox" Width="80" Margin="0,0,25,0"/>
-            <TextBlock>
-                Категория: 
-            </TextBlock>
-            <TextBox x:Name="CategoryTextBox" Width="120" Margin="0,0,25,0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <Label Content="Код:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="CodeTextBox" Width="80" Margin="0,0,10,0"/>
+
+            <Label Content="Название:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="NameTextBox" Width="120" Margin="0,0,10,0"/>
+
+            <Label Content="Цена:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="PriceTextBox" Width="80" Margin="0,0,10,0"/>
+
+            <Label Content="Количество:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="QuantityTextBox" Width="80" Margin="0,0,10,0"/>
+
+            <Label Content="Категория:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="CategoryTextBox" Width="120" Margin="0,0,10,0"/>
+
             <Button Content="Добавить" Click="AddProductButton_Click"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10">
-            <TextBox x:Name="SearchTextBox" Width="200" Margin="0,0,5,0"/>
+            <Label Content="Поиск:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="0,0,10,0"/>
             <Button Content="Поиск" Click="SearchButton_Click"/>
         </StackPanel>
 
-        <DataGrid x:Name="ProductsDataGrid" Grid.Row="2" AutoGenerateColumns="False">
+        <DataGrid x:Name="ProductsDataGrid" Grid.Row="2" AutoGenerateColumns="False" Margin="10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Код" Binding="{Binding Code}"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding Name}"/>
@@ -53,19 +50,17 @@
         </DataGrid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="10">
-            <TextBlock>
-                Код для продажи:
-            </TextBlock>
-            <TextBox x:Name="SellCodeTextBox" Width="80" Margin="0,0,5,0"/>
-            <TextBlock>
-                Количество:
-            </TextBlock>
-            <TextBox x:Name="SellQuantityTextBox" Width="80" Margin="0,0,5,0"/>
-            <Button Content="Продать" Click="SellProductButton_Click"/>
-            <TextBlock>
-                Код для удаления:
-            </TextBlock>
-            <TextBox x:Name="RemoveCodeTextBox" Width="80" Margin="0,0,5,0"/>
+            <Label Content="Код для продажи:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="SellCodeTextBox" Width="80" Margin="0,0,10,0"/>
+
+            <Label Content="Количество:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="SellQuantityTextBox" Width="80" Margin="0,0,10,0"/>
+
+            <Button Content="Продать" Click="SellProductButton_Click" Margin="0,0,20,0"/>
+
+            <Label Content="Код для удаления:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="RemoveCodeTextBox" Width="80" Margin="0,0,10,0"/>
+
             <Button Content="Удалить" Click="RemoveProductButton_Click"/>
         </StackPanel>
     </Grid>
