@@ -27,5 +27,43 @@ namespace ISIP322Yalunin
             ProductsDataGrid.ItemsSource = inventoryManager.SearchProducts(query);
         }
 
+   
+        private void AddProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            string code = CodeTextBox.Text;
+            string name = NameTextBox.Text;
+            decimal price = decimal.Parse(PriceTextBox.Text);
+            int quantity = int.Parse(QuantityTextBox.Text);
+            string category = CategoryTextBox.Text;
+
+            inventoryManager.AddProduct(new Product(code, name, price, quantity, category));
+            ProductsDataGrid.ItemsSource = inventoryManager.GetProducts();
+        }
+
+      
+        private void RemoveProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            string code = RemoveCodeTextBox.Text;
+            inventoryManager.RemoveProduct(code);
+            ProductsDataGrid.ItemsSource = inventoryManager.GetProducts();
+        }
+
+      
+        private void SellProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            string code = SellCodeTextBox.Text;
+            int quantity = int.Parse(SellQuantityTextBox.Text);
+
+            if (inventoryManager.SellProduct(code, quantity))
+            {
+                MessageBox.Show("Товар успешно продан!");
+            }
+            else
+            {
+                MessageBox.Show("Ошибка: не хватает товара на складе или товар не найден.");
+            }
+
+            ProductsDataGrid.ItemsSource = inventoryManager.GetProducts();
+        }
     }
 }
