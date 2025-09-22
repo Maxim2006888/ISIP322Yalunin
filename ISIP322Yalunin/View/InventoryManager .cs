@@ -32,5 +32,17 @@ namespace ISIP322Yalunin.View
                 p.Name.Contains(query) ||
                 p.Category.Contains(query)).ToList();
         }
+
+        public bool SellProduct(string code, int quantity)
+        {
+            var product = products.FirstOrDefault(p => p.Code == code);
+            if (product != null && product.Quantity >= quantity)
+            {
+                product.Quantity -= quantity;
+                product.InStock = product.Quantity > 0;
+                return true;
+            }
+            return false;
+        }
     }
 }
