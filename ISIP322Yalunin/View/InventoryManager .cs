@@ -14,5 +14,15 @@ namespace ISIP322Yalunin.View
             products.Add(product);
         }
 
+        public bool RemoveProduct(string code)
+        {
+            var product = products.FirstOrDefault(p => p.Code == code);
+            if (product != null)
+            {
+                products.Remove(product);
+                return true;
+            }
+            return false;
+        }
     }
 }
