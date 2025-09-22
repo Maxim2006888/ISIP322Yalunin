@@ -26,5 +26,6 @@ namespace ISIP322Yalunin
             string query = SearchTextBox.Text;
             ProductsDataGrid.ItemsSource = inventoryManager.SearchProducts(query);
         }
+
     }
 }
