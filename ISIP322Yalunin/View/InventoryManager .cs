@@ -44,5 +44,10 @@ namespace ISIP322Yalunin.View
             }
             return false;
         }
+
+        public List<Product> GetProducts()
+        {
+            return products;
+        }
     }
 }
