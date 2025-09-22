@@ -13,5 +13,6 @@ namespace ISIP322Yalunin.View
         {
             products.Add(product);
         }
+
     }
 }
