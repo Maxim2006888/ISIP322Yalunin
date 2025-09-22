@@ -24,5 +24,13 @@ namespace ISIP322Yalunin.View
             }
             return false;
         }
+
+        public List<Product> SearchProducts(string query)
+        {
+            return products.Where(p =>
+                p.Code.Contains(query) ||
+                p.Name.Contains(query) ||
+                p.Category.Contains(query)).ToList();
+        }
     }
 }
