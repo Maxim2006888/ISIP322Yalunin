@@ -19,6 +19,12 @@ namespace ISIP322Yalunin
         public MainWindow()
         {
             InitializeComponent();
+            inventoryManager.AddProduct(new Product("1001", "Молоко", 50, 10, "Продукты"));
+            inventoryManager.AddProduct(new Product("1002", "Хлеб", 30, 20, "Продукты"));
+            inventoryManager.AddProduct(new Product("2003", "Шампунь", 150, 5, "Бытовая химия"));
+            inventoryManager.AddProduct(new Product("2004", "Ручка", 150, 5, "Концелярия"));
+            inventoryManager.AddProduct(new Product("2005", "Карандаш", 150, 5, "Концелярия"));
+
             ProductsDataGrid.ItemsSource = inventoryManager.GetProducts();
         }
         private void SearchButton_Click(object sender, RoutedEventArgs e)
